@@ -75,16 +75,16 @@
 
 /* ---------- Skills Table: unchanged from original ---------- */
 .skills-table {
-  margin-top: 50px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 25px;
 }
 
 .skills-row {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -92,13 +92,13 @@
   background: linear-gradient(145deg, #080808 0%, #0f0f0f 100%);
   border: 1px solid rgba(0, 255, 255, 0.12);
   border-radius: 12px;
-  padding: 18px 22px;
+  padding: 10px 12px;
   width: 300px;
   text-align: left;
 }
 
 .skill-box h3 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #00ffe0;
   margin-bottom: 10px;
@@ -110,8 +110,8 @@
 }
 
 .skill-box li {
-  font-size: 0.875rem;
+  font-size: 0.7rem;
   color: #b0b0b0;
-  margin-bottom: 6px;
+  margin-bottom: 3px;
   transition: color 0.2s, transform 0.2s;
 }

@@ -1,17 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { label: "Home", to: "/" },
-  { label: "Projects", to: "/projects" },
-  { label: "Gallery", to: "/gallery" },
-  { label: "Skills", to: "/skills" },
-  { label: "Certificates", to: "/certificates" },
-  { label: "Blog", to: "/blog" },
-  { label: "Resume", to: "/resume" },
-  { label: "About Me", to: "/about" },
-  { label: "Contact", to: "/contact" },
+  /*{ label: "Home", to: "/" },
+  { label: "Resume", to: "/resume" },*/
 ];
 
 export default function Navbar() {
@@ -19,6 +12,13 @@ export default function Navbar() {
   const [showButton, setShowButton] = useState(false);
   const navRef = useRef(null);
   const linksRef = useRef(null);
+  const location = useLocation();
+
+  const handleHomeClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   // Check if links overflow nav width (to show hamburger)
   const checkOverflow = () => {
@@ -64,10 +64,10 @@ export default function Navbar() {
               color: "var(--accent)",
             }}
           >
-            KD
+            KA
           </motion.div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <h1 style={{ margin: 0, fontSize: 14 }}>Kunj Desai</h1>
+            <h1 style={{ margin: 0, fontSize: 14 }}>Khansa Ahmed</h1>
             <div style={{ fontSize: 12, color: "var(--muted)" }}>
               ML • AI • Developer
             </div>
@@ -89,6 +89,7 @@ export default function Navbar() {
             <NavLink
               key={l.to}
               to={l.to}
+              onClick={l.to === "/" ? handleHomeClick : undefined}
               end
               style={{
                 position: "relative",
@@ -203,7 +204,12 @@ export default function Navbar() {
               <NavLink
                 key={l.to}
                 to={l.to}
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  if (l.to === "/") {
+                    handleHomeClick();
+                  }
+                  setIsOpen(false);
+                }}
                 style={{
                   color: "#fff",
                   textDecoration: "none",

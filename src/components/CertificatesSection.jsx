@@ -1,69 +1,76 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-// ✅ Certificates data (added URLs for View button)
 const CERTS = {
   tech: [
     {
-      title: "Flipkart Hackathon",
-      org: "Flipkart",
-      date: "2022",
-      img: "/certs/flipkart.jpg",
-      link: "/certs/flipkart.jpg",
+      title: "Developing Back-End Apps with Node.js & Express",
+      org: "IBM (Coursera)",
+      date: "Dec 2025",
+      img: "/certs/backend.png",
     },
     {
-      title: "Solution Challenge",
-      org: "Google Developers",
-      date: "2023",
-      img: "/certs/hack2skill.png",
-      link: "/certs/hack2skill.png",
+      title: "Developing Front-End Apps with React",
+      org: "IBM (Coursera)",
+      date: "Nov 2025",
+      img: "/certs/frontend.png",
     },
     {
-      title: "ADira",
-      org: "SCET AI Club",
-      date: "2025",
-      img: "/certs/adira.png",
-      link: "/certs/adira.png",
+      title: "Python for Data Science, AI & Development",
+      org: "IBM (Coursera)",
+      date: "Dec 2025",
+      img: "/certs/python.png",
+    },
+    {
+      title: "Introduction to Generative AI for Software Development",
+      org: "DeepLearning.AI (Coursera)",
+      date: "Jan 2026",
+      img: "/certs/genai.png",
+    },
+    {
+      title: "Getting Started with Git & GitHub",
+      org: "IBM (Coursera)",
+      date: "Sep 2023",
+      img: "/certs/git.png",
+    },
+    {
+      title: "Introduction to Cloud Computing",
+      org: "IBM (Coursera)",
+      date: "Aug 2023",
+      img: "/certs/cloud.png",
     },
   ],
   other: [
     {
-      title: "codathon",
-      org: "SCET tech fest",
-      date: "2025",
-      img: "/certs/codathon.png",
-      link: "/certs/codathon.png",
-    },
-    {
-      title: "bugbuzz",
-      org: "SCET tech fest",
-      date: "2025",
-      img: "/certs/bugbuzz.png",
-      link: "/certs/bugbuzz.png",
-    },
-    {
-      title: "Dataloom",
-      org: "SCET",
-      date: "2024",
-      img: "/certs/dataloom.png",
-      link: "/certs/dataloom.png",
+      title: "National AI Training Bootcamp",
+      org: "Ministry of IT & Telecom (Indus AI Week)",
+      date: "Feb 2026",
+      img: "/certs/bootcamp.jpeg",
     },
   ],
 };
 
-export default function Certificates() {
+export default function CertificatesSection() {
   const [tab, setTab] = useState("tech");
   const [selectedCert, setSelectedCert] = useState(null);
 
   return (
-    <section className="container" style={{ padding: "40px 0" }}>
-      <div className="card" style={{ background: "#111", borderRadius: 12, padding: 24 }}>
-        <h2 style={{ fontSize: "1.8rem", color: "#fff", marginBottom: 4 }}>Certificates 🏅</h2>
+    <section
+      id="certificates"
+      className="container"
+      style={{ padding: "15px 0" }}
+    >
+      <div
+        className="card"
+        style={{ background: "#111", borderRadius: 12, padding: 15 }}
+      >
+        <h2 style={{ fontSize: "1.8rem", color: "#fff", marginBottom: 2 }}>
+          Certificates 🏅
+        </h2>
         <p className="lead" style={{ color: "#aaa" }}>
-          Explore my certifications — technical & others.
+          Explore my certifications — technical and others.
         </p>
 
-        {/* Tabs */}
         <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
           {["tech", "other"].map((t) => (
             <button
@@ -86,7 +93,6 @@ export default function Certificates() {
           ))}
         </div>
 
-        {/* Certificates Grid */}
         <div
           className="certs-grid"
           style={{
@@ -102,7 +108,8 @@ export default function Certificates() {
                 key={c.title}
                 className="cert card"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileHover={{
@@ -154,7 +161,6 @@ export default function Certificates() {
         </div>
       </div>
 
-      {/* Modal Preview */}
       <AnimatePresence>
         {selectedCert && (
           <motion.div

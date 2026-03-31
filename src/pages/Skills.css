@@ -6,7 +6,7 @@
   max-width: calc(100% - 8%); 
 }
 
-.skills-header h2 {
+.skills-title {
   font-size: 1.25rem;      /* smaller title */
   color: #00ffe0;
   font-weight: 600;
@@ -14,7 +14,7 @@
   line-height: 1.05;
 }
 
-.underline {
+.skills-divider {
   width: 60px;
   height: 2px;
   background: #00ffe0;
@@ -22,11 +22,12 @@
 }
 
 /* subtitle (small & tight) */
-.skills-header p {
+.skills-subtitle {
   color: #b0b0b0;
   font-size: 0.95rem;
   margin: 0;
   padding: 0;
+  max-width: 680px;
 }
 
 /* ---------- Orb area: narrower margins and reduced height ---------- */
@@ -97,7 +98,105 @@
   background: linear-gradient(145deg, #080808 0%, #0f0f0f 100%);
   border: 1px solid rgba(0, 255, 255, 0.12);
   border-radius: 12px;
-  padding: 18px 22px;
+  padding: 14px 16px;
   width: 300px;
   text-align: left;
+}
+
+.skill-box h3 {
+  font-size: 1rem;
+  margin: 0 0 8px;
+}
+
+.skill-box li {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1024px) {
+  .skills-stage {
+    height: 420px;
+  }
+
+  .skill-box {
+    width: min(46%, 320px);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-header {
+    margin: 8px 0 12px 3%;
+    max-width: 94%;
+  }
+
+  .skills-title {
+    font-size: 1.4rem;
+  }
+
+  .skills-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .skills-stage {
+    width: 96%;
+    height: 340px;
+    border-radius: 12px;
+  }
+
+  .skill-circle {
+    width: 62px;
+    height: 62px;
+  }
+
+  .skill-circle img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .skill-circle span {
+    font-size: 9px;
+  }
+
+  .skills-table {
+    margin-top: 36px;
+    gap: 20px;
+  }
+
+  .skills-row {
+    gap: 14px;
+  }
+
+  .skill-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 14px;
+  }
+
+  .skill-box h3 {
+    font-size: 0.92rem;
+    margin: 0 0 6px;
+  }
+
+  .skill-box li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-stage {
+    height: 300px;
+  }
+
+  .skill-circle {
+    width: 54px;
+    height: 54px;
+  }
+
+  .skill-circle img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .skill-circle span {
+    font-size: 8px;
+  }
 }

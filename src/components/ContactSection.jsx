@@ -9,10 +9,10 @@ import whatsappLogo from "../../public/whatsapp.png";
 import instagramLogo from "../../public/insta.png";
 import facebookLogo from "../../public/facebook.png";
 
-import "../CSS/Contact.css"
-import '../index.css' 
+import "../CSS/Contact.css";
+import "../index.css";
 
-export default function Contact() {
+export default function ContactSection() {
   const [form, setForm] = useState({
     name: "",
     contact: "",
@@ -29,14 +29,14 @@ export default function Contact() {
     e.preventDefault();
 
     if (!form.name || !form.contact || !form.subject || !form.message) {
-      setStatus("⚠️ Please fill in all fields.");
+      setStatus("Please fill in all fields.");
       return;
     }
 
     const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
     const isEmail = emailPattern.test(form.contact);
-    if (!isEmail && isNaN(form.contact)) {
-      setStatus("⚠️ Please enter a valid email or phone number.");
+    if (!isEmail && Number.isNaN(Number(form.contact))) {
+      setStatus("Please enter a valid email or phone number.");
       return;
     }
 
@@ -56,50 +56,51 @@ export default function Contact() {
       )
       .then(
         () => {
-          setStatus("✅ Message sent successfully!");
+          setStatus("Message sent successfully.");
           setForm({ name: "", contact: "", subject: "", message: "" });
         },
         (error) => {
           console.error("FAILED...", error);
-          setStatus("❌ Failed to send. Try again later.");
+          setStatus("Failed to send. Try again later.");
         }
       );
   };
-
   const quickLinks = [
-    { img: githubLogo, title: "GitHub", link: "https://github.com/kunj2803" },
-    { img: linkedinLogo, title: "LinkedIn", link: "https://www.linkedin.com/in/kunj-desai-07717b293/" },
-    { img: gmailLogo, title: "Email", link: "mailto:kunjd2803@gmail.com" },
-    { img: whatsappLogo, title: "WhatsApp", link: "https://wa.me/+918758209508" },
-    { img: instagramLogo, title: "Instagram", link: "https://www.instagram.com/kunj_2834/" },
-    { img: facebookLogo, title: "Facebook", link: "https://www.facebook.com/kunj.desai.222608" },
-  ];
+      { img: githubLogo, title: 'GitHub', link: 'https://github.com/KhansaAhmed88013' },
+      { img: linkedinLogo, title: 'LinkedIn', link: 'https://www.linkedin.com/in/khansaahmed1/' },
+      { img: gmailLogo, title: 'Email', link: 'mailto:khansa88013@gmail.com' },
+      { img: whatsappLogo, title: 'WhatsApp', link: 'https://wa.me/+923150414203' },
+      /*{ img: instagramLogo, title: 'Instagram', link: 'https://www.instagram.com/khansa_.ahmed/' },*/
+      ]
 
+  
   return (
-    <section className="contact-section">
+    <section id="contact" className="contact-section" style={{ marginTop: "64px" }}>
       <motion.h1
         initial={{ opacity: 0, y: -15 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.7 }}
         className="contact-title"
       >
-        Let’s Connect & Collaborate 🤝
+        Let us Connect and Collaborate
       </motion.h1>
 
       <motion.p
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ delay: 0.2, duration: 0.8 }}
         className="contact-subtitle"
       >
-        Whether it’s a new project, a collaboration, or just to say hi — I’d love to hear from you!
+        Whether it is a new project, a collaboration, or just to say hi, I would
+        love to hear from you.
       </motion.p>
 
-      {/* Quick Links */}
       <motion.div className="contact-links">
         {quickLinks.map((item, i) => (
           <motion.a
-            key={i}
+            key={item.title}
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
@@ -122,23 +123,65 @@ export default function Contact() {
         ))}
       </motion.div>
 
-      {/* Contact Form */}
       <motion.form
         onSubmit={handleSubmit}
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.9 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ delay: 0.3, duration: 0.9 }}
         className="contact-form"
       >
-        <input type="text" name="name" placeholder="Your Name" value={form.name} onChange={handleChange} required />
-        <input type="text" name="contact" placeholder="Your Email or Phone" value={form.contact} onChange={handleChange} required />
-        <input type="text" name="subject" placeholder="Subject" value={form.subject} onChange={handleChange} required />
-        <textarea name="message" placeholder="Your Message..." value={form.message} onChange={handleChange} rows="5" required />
-        <motion.button type="submit" className="contact-btn" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          🚀 Send Message
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value={form.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="contact"
+          placeholder="Your Email or Phone"
+          value={form.contact}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="subject"
+          placeholder="Subject"
+          value={form.subject}
+          onChange={handleChange}
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message..."
+          value={form.message}
+          onChange={handleChange}
+          rows="5"
+          required
+        />
+        <motion.button
+          type="submit"
+          className="contact-btn"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Send Message
         </motion.button>
 
-        {status && <motion.p initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }} className="contact-status">{status}</motion.p>}
+        {status && (
+          <motion.p
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="contact-status"
+          >
+            {status}
+          </motion.p>
+        )}
       </motion.form>
     </section>
   );
