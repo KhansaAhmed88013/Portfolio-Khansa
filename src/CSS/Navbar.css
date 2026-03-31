@@ -98,6 +98,62 @@
 .mobile-dropdown a {
   color: #fff;
   text-decoration: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav {
+    padding: 0.6rem 1rem;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .nav-name h1 {
+    font-size: 13px;
+  }
+  
+  .nav-tagline {
+    font-size: 11px;
+  }
+  
+  .nav-links {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 0.5rem 0.8rem;
+  }
+  
+  .nav-left {
+    gap: 8px;
+  }
+  
+  .logo {
+    font-size: 1rem;
+  }
+  
+  .nav-name h1 {
+    font-size: 12px;
+  }
+  
+  .nav-tagline {
+    display: none;
+  }
+  
+  .nav-links {
+    gap: 0.8rem;
+  }
+  
+  .underline {
+    width: 60%;
+    height: 1px;
+    margin-top: 2px;
+  }
+}
   padding: 0.8rem 0;
   width: 100%;
   text-align: center;
