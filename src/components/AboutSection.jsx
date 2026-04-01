@@ -35,7 +35,6 @@ export default function AboutSection() {
         >
           About Me
         </h2>
-
         <p
           style={{
             fontSize: "1rem",
@@ -47,20 +46,22 @@ export default function AboutSection() {
           Science student at Quaid-i-Azam University, Islamabad with a strong
           interest in <strong>software development</strong> and{" "}
           <strong>emerging technologies</strong> I enjoy building efficient
-          backend systems and exploring how modern tools like <strong>cloud computing </strong>
-          and <strong>generative AI</strong> are transforming the tech landscape. I’m
-          particularly driven by the idea of creating solutions that are both
-          practical and impactful.
+          backend systems and and exploring areas like{" "}
+          <strong>cloud computing </strong>
+          and <strong>generative AI</strong> .
         </p>
 
         <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.8)" }}>
-          Beyond coding, I like learning new technologies, improving my development workflow, and experimenting with ideas that enhance user experience. My goal is to grow as a developer while contributing to innovative and meaningful projects
+          I like learning new tools, improving my workflow, and creating
+          practical, user-focused solutions. Currently pursuing my degree
+          (2022–2026), I have experience in Python, Node.js, and full-stack
+          development, along with certifications in cloud computing, React,
+          Git/GitHub, and generative AI.
         </p>
-
         <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.8)" }}>
-          Currently pursuing my degree (2022–2026), I have hands-on experience in Python, Node.js, and backend web development. I’ve also completed certifications in cloud computing, React, Git/GitHub, and generative AI, and I’m actively seeking opportunities to apply my skills in real-world projects and internships.
+          I’m actively looking for opportunities to apply my skills in
+          real-world projects and internships.
         </p>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
