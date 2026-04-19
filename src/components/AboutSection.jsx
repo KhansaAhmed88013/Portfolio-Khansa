@@ -126,7 +126,7 @@ export default function AboutSection() {
                   <strong>Quaid-e-Azam University</strong> - Islamabad, Pakistan
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  4th year (Pursuing) | CGPA: 3.8/4.0
+                  4th year (Pursuing) | CGPA: 3.9/4.0
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>2022 - 2026</p>
               </div>
