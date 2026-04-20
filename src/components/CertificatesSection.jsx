@@ -47,6 +47,18 @@ const CERTS = {
       date: "Feb 2026",
       img: "/certs/bootcamp.jpeg",
     },
+    {
+      title: " CS50x 𝗣𝘂𝘇𝘇𝗹𝗲 𝗗𝗮𝘆 𝟮𝟬𝟮𝟲 𝗯𝘆 Harvard University",
+      org: "Harvard University",
+      date: "April 2026",
+      img: "/certs/cs-puzzle.png",
+    },
+    {
+      title: "Nestlé E-learning 2026 | Resilience",
+      org: "Nestlé",
+      date: "April 2026",
+      img: "/certs/Nestle.png",
+    }
   ],
 };
 
