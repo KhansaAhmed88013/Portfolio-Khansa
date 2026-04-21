@@ -47,11 +47,12 @@ export default function AboutSection() {
           interest in <strong>software development</strong> and{" "}
           <strong>emerging technologies</strong> I enjoy building efficient
           backend systems and and exploring areas like{" "}
-          <strong>cloud computing </strong>
-          and <strong>generative AI</strong> .
+          <strong>cloud computing </strong> ,  <strong>deployment systems </strong>
+          and <strong>generative AI</strong>.
         </p>
 
         <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.8)" }}>
+          I am particularly interested in understanding how applications are built, deployed, and managed in real-world environments.
           I like learning new tools, improving my workflow, and creating
           practical, user-focused solutions. Currently pursuing my degree
           (2022–2026), I have experience in Python, Node.js, and full-stack

@@ -19,12 +19,12 @@ import instagramLogo from '../../public/insta.png'
 
 export default function Home() {
   const professions = [
-    'AI Enthusiast',
-    'Software Engineer',
-    "DevOps",
-    'Problem Solving',
-    'Full stack Developer',
-  ]
+    'Full Stack Developer',
+'DevOps Enthusiast',
+'Cloud & Deployment',
+'Problem Solving',
+'AI Explorer',
+ ]
 
   const quickLinks = [
     { img: githubLogo, title: 'GitHub', link: 'https://github.com/KhansaAhmed88013' },
@@ -95,7 +95,7 @@ export default function Home() {
 
             {/* Typing Animated Text */}
             <p className="typing-effect">
-              Artificial Intelligence | Full stack Developer | Tech Explorer
+              Full Stack Developer | DevOps Enthusiast | AI Explorer
             </p>
 
             {/* Profession Tags */}

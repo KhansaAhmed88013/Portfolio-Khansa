@@ -70,9 +70,13 @@ const ROWS = [
     { title: "Programming Languages", items: ["Python", "C++", "C#", "Java"] },
     { title: "Web Technologies", items: ["HTML", "CSS", "JavaScript", "React"] },
     { title: "Databases and Tools", items: ["MySQL", "MongoDB", "Git"] },
-    { title: "Frameworks and Libraries", items: ["TensorFlow", "PyTorch"] },
-  ],
+    {
+  title: "DevOps & Cloud",
+  items: ["Docker", "CI/CD", "Linux", "Vercel", "Nginx"]
+}],
   [
+    { title: "Frameworks and Libraries", items: ["TensorFlow", "PyTorch"] },
+  
     {
       title: "Core Concepts",
       items: [
