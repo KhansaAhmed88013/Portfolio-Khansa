@@ -7,6 +7,7 @@ import CertificatesSection from '../components/CertificatesSection'
 import SkillsSection from '../components/SkillsSection'
 import ProjectsSection from '../components/ProjectsSection'
 import ContactSection from '../components/ContactSection'
+import ExperienceSection from '../components/ExperienceSection'
 
 
 // 🖼️ Import Assets
@@ -150,6 +151,7 @@ export default function Home() {
       </section>
 
       <AboutSection />
+      <ExperienceSection />
       <CertificatesSection />
       <SkillsSection />
       <ProjectsSection />
