@@ -36,33 +36,31 @@ export default function AboutSection() {
           About Me
         </h2>
         <p
-          style={{
-            fontSize: "1rem",
-            color: "rgba(255,255,255,0.85)",
-            marginBottom: "1rem",
-          }}
-        >
-          Hi, I&apos;m <strong>Khansa Ahmed</strong>, a passionate Computer
-          Science student at Quaid-i-Azam University, Islamabad with a strong
-          interest in <strong>software development</strong> and{" "}
-          <strong>emerging technologies</strong> I enjoy building efficient
-          backend systems and and exploring areas like{" "}
-          <strong>cloud computing </strong> ,  <strong>deployment systems </strong>
-          and <strong>generative AI</strong>.
-        </p>
+  style={{
+    fontSize: "1rem",
+    color: "rgba(255,255,255,0.85)",
+    marginBottom: "1rem",
+  }}
+>
+  Hi, I'm <strong>Khansa Ahmed</strong>. I'm an Information
+  Technology graduate who enjoys working on AI, computer vision,
+  and software development. I've worked on projects involving AI
+  models and application development, and I enjoy exploring how
+  technology can be used to solve real-world problems.
+</p>
 
-        <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.8)" }}>
-          I am particularly interested in understanding how applications are built, deployed, and managed in real-world environments.
-          I like learning new tools, improving my workflow, and creating
-          practical, user-focused solutions. Currently pursuing my degree
-          (2022–2026), I have experience in Python, Node.js, and full-stack
-          development, along with certifications in cloud computing, React,
-          Git/GitHub, and generative AI.
-        </p>
-        <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.8)" }}>
-          I’m actively looking for opportunities to apply my skills in
-          real-world projects and internships.
-        </p>
+<p
+  style={{
+    fontSize: "1rem",
+    color: "rgba(255,255,255,0.8)",
+  }}
+>
+  Alongside AI, I enjoy building full-stack applications, working
+  on backend systems, and learning about cloud computing and
+  deployment. I'm always looking to improve my skills, explore
+  new technologies, and take on projects that challenge me and
+  help me grow as an engineer.
+</p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +114,7 @@ export default function AboutSection() {
                     fontSize: "1.25rem",
                   }}
                 >
-                  Bachelor's in information technology
+                  Bachelor of Information Technology
                 </h4>
                 <p
                   style={{
@@ -124,12 +122,12 @@ export default function AboutSection() {
                     marginBottom: "0.2rem",
                   }}
                 >
-                  <strong>Quaid-e-Azam University</strong> - Islamabad, Pakistan
+                  <strong>Quaid-i-Azam University</strong> - Islamabad, Pakistan
                 </p>
                 <p style={{ color: "rgba(255,255,255,0.7)" }}>
-                  4th year (Pursuing) | CGPA: 3.9/4.0
+                  CGPA: 3.9/4.0
                 </p>
-                <p style={{ color: "rgba(255,255,255,0.7)" }}>2022 - 2026</p>
+                <p style={{ color: "rgba(255,255,255,0.7)" }}>September 2022 – June 2026</p>
               </div>
             </motion.div>
           </div>

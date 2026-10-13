@@ -40,6 +40,10 @@ const SKILLS = [
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   },
   {
+  name: "Node.js",
+  logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+},
+  {
     name: "MySQL",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
   },
@@ -59,36 +63,59 @@ const SKILLS = [
     name: "PyTorch",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
   },
-  /*{
+  {
     name: "OpenCV",
     logo: "https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg",
-  },*/
+  },
 ];
 
 const ROWS = [
   [
-    { title: "Programming Languages", items: ["Python", "C++", "C#", "Java"] },
-    { title: "Web Technologies", items: ["HTML", "CSS", "JavaScript", "React"] },
-    { title: "Databases and Tools", items: ["MySQL", "MongoDB", "Git"] },
     {
-  title: "DevOps & Cloud",
-  items: ["Docker", "CI/CD", "Linux", "Vercel", "Nginx"]
-}],
+      title: "Programming Languages",
+      items: ["Python", "C", "C++", "C#", "Java", "JavaScript"],
+    },
+    {
+      title: "Web & Application Development",
+      items: ["HTML", "CSS", "React", "Node.js"],
+    },
+    {
+  title: "AI & Machine Learning",
+  items: [
+    "Computer Vision",
+    "Object Detection",
+    "OpenCV",
+    "Machine Learning",
+    "Deep Learning",
+    "TensorFlow",
+    "PyTorch",
+  ],
+},
+    {
+      title: "Databases & Tools",
+      items: ["MySQL", "MongoDB", "Git", "GitHub"],
+    },
+  ],
   [
-    { title: "Frameworks and Libraries", items: ["TensorFlow", "PyTorch"] },
-  
+    {
+      title: "DevOps & Cloud",
+      items: ["Docker", "CI/CD", "Linux", "Vercel", "Nginx"],
+    },
     {
       title: "Core Concepts",
       items: [
-        "Data Structures and Algorithms",
-        "Machine Learning",
-        "Deep Learning",
-        "AI",
+        "Data Structures & Algorithms",
+        "Object-Oriented Programming",
+        "Problem Solving",
       ],
     },
     {
       title: "Soft Skills",
-      items: ["Teamwork", "Problem Solving", "Creativity", "Adaptability", "Communication"],
+      items: [
+        "Teamwork",
+        "Communication",
+        "Adaptability",
+      ],
     },
   ],
 ];
@@ -134,7 +161,7 @@ export default function SkillsSection() {
         circle.style.left = `${x}px`;
         circle.style.top = `${y}px`;
 
-        const travel = isSmallScreen ? 40 : 80;
+        const travel = isSmallScreen ? 30 : 60;
         const dx = (Math.random() - 0.5) * travel;
         const dy = (Math.random() - 0.5) * travel;
         const floatAnimation = circle.animate(
@@ -180,7 +207,7 @@ export default function SkillsSection() {
         <h2 className="skills-title">My Skills</h2>
         <div className="skills-divider"></div>
         <p className="skills-subtitle">
-          Technical expertise blended with creativity — explore my core competencies below.
+          Technologies and tools I use to build software and explore AI solutions.
         </p>
       </motion.div>
 

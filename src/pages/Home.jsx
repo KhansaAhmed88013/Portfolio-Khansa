@@ -10,7 +10,7 @@ import ContactSection from '../components/ContactSection'
 
 
 // 🖼️ Import Assets
-import photo from '../../public/photo.png'
+import photo from '../../public/my-pic.png'
 import githubLogo from '../../public/github.png'
 import linkedinLogo from '../../public/linkedin.png'
 import gmailLogo from '../../public/gmail.png'
@@ -19,11 +19,11 @@ import instagramLogo from '../../public/insta.png'
 
 export default function Home() {
   const professions = [
-    'Full Stack Developer',
-'DevOps Enthusiast',
-'Cloud & Deployment',
+    'AI Engineering',
+    'Computer Vision',
+'Full-Stack Development',
+'Cloud & DevOps',
 'Problem Solving',
-'AI Explorer',
  ]
 
   const quickLinks = [
@@ -95,7 +95,7 @@ export default function Home() {
 
             {/* Typing Animated Text */}
             <p className="typing-effect">
-              Full Stack Developer | DevOps Enthusiast | AI Explorer
+              Computer Vision Engineer | AI Developer | Full-Stack Developer
             </p>
 
             {/* Profession Tags */}
@@ -111,7 +111,7 @@ export default function Home() {
             <motion.div className="info-cards">
               {[
                 { label: '📍 Location', value: 'Rawalpindi , Pakistan' },
-                { label: '💼 Expertise', value: 'AI, MERN , Problem Solving' },
+                { label: '💼 Expertise', value: 'AI, Software Engineering' },
                 { label: '📧 Contact', value: 'khansa88013@gmail.com' },
               ].map((info, i) => (
                 <motion.div key={i} whileHover={{ y: -4, scale: 1.05 }} transition={{ type: 'spring', stiffness: 250 }} className="info-card">

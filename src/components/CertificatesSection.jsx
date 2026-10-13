@@ -3,44 +3,57 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const CERTS = {
   tech: [
-    {
-      title: "Developing Back-End Apps with Node.js & Express",
-      org: "IBM (Coursera)",
-      date: "Dec 2025",
-      img: "/certs/backend.png",
-    },
-    {
-      title: "Developing Front-End Apps with React",
-      org: "IBM (Coursera)",
-      date: "Nov 2025",
-      img: "/certs/frontend.png",
-    },
-    {
-      title: "Python for Data Science, AI & Development",
-      org: "IBM (Coursera)",
-      date: "Dec 2025",
-      img: "/certs/python.png",
-    },
-    {
-      title: "Introduction to Generative AI for Software Development",
-      org: "DeepLearning.AI (Coursera)",
-      date: "Jan 2026",
-      img: "/certs/genai.png",
-    },
-    {
-      title: "Getting Started with Git & GitHub",
-      org: "IBM (Coursera)",
-      date: "Sep 2023",
-      img: "/certs/git.png",
-    },
-    {
-      title: "Introduction to Cloud Computing",
-      org: "IBM (Coursera)",
-      date: "Aug 2023",
-      img: "/certs/cloud.png",
-    },
-  ],
+  {
+    title: "Python for Data Science, AI & Development",
+    org: "IBM (Coursera)",
+    date: "Dec 2025",
+    img: "/certs/python.png",
+  },
+  {
+    title: "Introduction to Generative AI for Software Development",
+    org: "DeepLearning.AI (Coursera)",
+    date: "Jan 2026",
+    img: "/certs/genai.png",
+  },
+  {
+    title: "Developing Back-End Apps with Node.js & Express",
+    org: "IBM (Coursera)",
+    date: "Dec 2025",
+    img: "/certs/backend.png",
+  },
+  {
+    title: "Developing Front-End Apps with React",
+    org: "IBM (Coursera)",
+    date: "Nov 2025",
+    img: "/certs/frontend.png",
+  },
+  {
+    title: "Introduction to Cloud Computing",
+    org: "IBM (Coursera)",
+    date: "Aug 2023",
+    img: "/certs/cloud.png",
+  },
+  {
+    title: "Getting Started with Git & GitHub",
+    org: "IBM (Coursera)",
+    date: "Sep 2023",
+    img: "/certs/git.png",
+  },
+],
+
   other: [
+    {
+      title: "CALICO Spring '26 — Team Achievement",
+      org: "UC Berkeley",
+      date: "Spring 2026",
+      img: "/certs/calico.png",
+    },
+    {
+      title: "Code in Place — Section Leader",
+      org: "Stanford University",
+      date: "June 2026",
+      img: "/certs/code-in-place.png",
+    },
     {
       title: "National AI Training Bootcamp",
       org: "Ministry of IT & Telecom (Indus AI Week)",
@@ -48,7 +61,7 @@ const CERTS = {
       img: "/certs/bootcamp.jpeg",
     },
     {
-      title: " CS50x 𝗣𝘂𝘇𝘇𝗹𝗲 𝗗𝗮𝘆 𝟮𝟬𝟮𝟲 𝗯𝘆 Harvard University",
+      title: "CS50x Puzzle Day 2026",
       org: "Harvard University",
       date: "April 2026",
       img: "/certs/cs-puzzle.png",
@@ -58,7 +71,7 @@ const CERTS = {
       org: "Nestlé",
       date: "April 2026",
       img: "/certs/Nestle.png",
-    }
+    },
   ],
 };
 
