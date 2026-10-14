@@ -42,11 +42,7 @@ export default function AboutSection() {
     marginBottom: "1rem",
   }}
 >
-  Hi, I'm <strong>Khansa Ahmed</strong>. I'm an Information
-  Technology graduate who enjoys working on AI, computer vision,
-  and software development. I've worked on projects involving AI
-  models and application development, and I enjoy exploring how
-  technology can be used to solve real-world problems.
+  Hi, I'm <strong>Khansa Ahmed</strong>. I'm an Information Technology graduate who enjoys working on AI, computer vision, and software development. I've worked on projects involving AI models and application development, and I enjoy exploring how technology can be used to solve real-world problems.
 </p>
 
 <p
@@ -55,11 +51,7 @@ export default function AboutSection() {
     color: "rgba(255,255,255,0.8)",
   }}
 >
-  Alongside AI, I enjoy building full-stack applications, working
-  on backend systems, and learning about cloud computing and
-  deployment. I'm always looking to improve my skills, explore
-  new technologies, and take on projects that challenge me and
-  help me grow as an engineer.
+ Alongside AI, I enjoy building full-stack applications, working on backend systems, and learning about cloud computing, deployment, and secure coding practices. I'm always looking to improve my skills, explore new technologies, and build reliable and secure solutions through projects that challenge me and help me grow as an engineer.
 </p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

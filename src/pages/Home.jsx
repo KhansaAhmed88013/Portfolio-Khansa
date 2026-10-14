@@ -24,7 +24,8 @@ export default function Home() {
     'Computer Vision',
 'Full-Stack Development',
 'Cloud & DevOps',
-'Problem Solving',
+'Secure Coding',
+'AI Security'
  ]
 
   const quickLinks = [

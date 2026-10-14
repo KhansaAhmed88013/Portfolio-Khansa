@@ -77,7 +77,7 @@ const ROWS = [
     },
     {
       title: "Web & Application Development",
-      items: ["HTML", "CSS", "React", "Node.js"],
+      items: ["HTML", "CSS", "React", "Node.js","API Security"],
     },
     {
   title: "AI & Machine Learning",
@@ -99,7 +99,7 @@ const ROWS = [
   [
     {
       title: "DevOps & Cloud",
-      items: ["Docker", "CI/CD", "Linux", "Vercel", "Nginx"],
+      items: ["Docker", "CI/CD", "Linux", "Vercel", "Nginx","Secrets Management"],
     },
     {
       title: "Core Concepts",
