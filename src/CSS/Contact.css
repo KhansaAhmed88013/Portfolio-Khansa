@@ -6,6 +6,7 @@
 .contact-section {
   min-height: 100vh;
   width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +18,9 @@
 }
 
 .contact-title {
-  font-size: 2.6rem;
+  width: 100%;
+  max-width: 900px;
+  font-size: clamp(1.5rem, 5vw, 2.6rem);
   margin: 1.5rem 0 0.5rem;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;
@@ -59,12 +62,14 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  width: 100%;
+  width: min(100%, 500px);
   max-width: 500px;
 }
 
 .contact-form input,
 .contact-form textarea {
+  width: 100%;
+  min-width: 0;
   padding: 12px;
   border-radius: 8px;
   border: none;
@@ -128,6 +133,8 @@
   }
   
   .contact-btn {
+    max-width: 100%;
+    align-self: stretch;
     padding: 10px;
     font-size: 0.95rem;
   }
@@ -139,7 +146,7 @@
   }
   
   .contact-title {
-    font-size: 1.4rem;
+    font-size: clamp(1.35rem, 6vw, 1.7rem);
   }
   
   .contact-subtitle {

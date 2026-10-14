@@ -37,6 +37,7 @@ export default function Navbar() {
       {/* --- Navbar --- */}
       <nav
         ref={navRef}
+        className="site-navbar"
         style={{
           position: "sticky",
           top: 0,
@@ -44,7 +45,7 @@ export default function Navbar() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "1rem 2rem",
+          padding: "1rem clamp(0.75rem, 4vw, 2rem)",
           borderBottom: "1px solid rgba(255,255,255,0.1)",
           background: "rgba(0,0,0,0.6)",
           backdropFilter: "blur(10px)",

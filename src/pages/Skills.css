@@ -1,9 +1,18 @@
+/* ---------- Skills section ---------- */
+.skills-container {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
 /* ---------- Header: smaller, left-aligned, no big gaps ---------- */
 .skills-header {
   text-align: left;        /* align header to left */
-  margin: 10px 0 12px 4%;     /* remove big top/bottom gaps, small left offset to match orbs */
+  margin: 10px 0 12px;
   padding: 0;
-  max-width: calc(100% - 8%); 
+  max-width: 100%;
 }
 
 .skills-title {
@@ -79,6 +88,37 @@
 /* Keep your existing styles for .skills-table, .skills-row, .skill-box */
 /* (if you previously had them, they remain valid and won't be impacted) */
 
+@media (min-width: 769px) and (max-width: 1024px) {
+  .skills-container {
+    padding: 32px 16px;
+  }
+
+  .skills-stage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 8px;
+    height: auto;
+    min-height: 150px;
+    padding: 12px;
+  }
+
+  .skill-circle {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 62px;
+    height: 62px;
+    transform: none !important;
+  }
+
+  .skill-circle img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 /* Example: if needed, re-declare to ensure no inherited changes */
 .skills-table {
   margin-top: 50px;
@@ -90,9 +130,10 @@
 
 .skills-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   justify-content: center;
   gap: 24px;
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
@@ -132,9 +173,13 @@
 }
 
 @media (max-width: 768px) {
+  .skills-container {
+    padding: 32px 16px;
+  }
+
   .skills-header {
-    margin: 8px 0 12px 3%;
-    max-width: 94%;
+    margin: 8px 0 12px;
+    max-width: 100%;
   }
 
   .skills-title {
@@ -146,14 +191,25 @@
   }
 
   .skills-stage {
-    width: 96%;
-    height: 340px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 8px;
+    width: 100%;
+    height: auto;
+    min-height: 150px;
+    padding: 12px;
     border-radius: 12px;
   }
 
   .skill-circle {
-    width: 62px;
-    height: 62px;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 54px;
+    height: 54px;
+    transform: none !important;
   }
 
   .skill-circle img {
@@ -200,7 +256,9 @@
 
 @media (max-width: 480px) {
   .skills-stage {
-    height: 300px;
+    grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
+    min-height: 150px;
+    padding: 10px;
   }
 
   .skill-circle {
@@ -229,7 +287,7 @@
   .skill-box {
     width: 100% !important;
     max-width: none !important;
-    padding: 20px 22px;
+    padding: 16px;
   }
 
   .skill-box h3 {

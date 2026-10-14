@@ -3,43 +3,43 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const CERTS = {
   tech: [
-  {
-    title: "Python for Data Science, AI & Development",
-    org: "IBM (Coursera)",
-    date: "Dec 2025",
-    img: "/certs/python.png",
-  },
-  {
-    title: "Introduction to Generative AI for Software Development",
-    org: "DeepLearning.AI (Coursera)",
-    date: "Jan 2026",
-    img: "/certs/genai.png",
-  },
-  {
-    title: "Developing Back-End Apps with Node.js & Express",
-    org: "IBM (Coursera)",
-    date: "Dec 2025",
-    img: "/certs/backend.png",
-  },
-  {
-    title: "Developing Front-End Apps with React",
-    org: "IBM (Coursera)",
-    date: "Nov 2025",
-    img: "/certs/frontend.png",
-  },
-  {
-    title: "Introduction to Cloud Computing",
-    org: "IBM (Coursera)",
-    date: "Aug 2023",
-    img: "/certs/cloud.png",
-  },
-  {
-    title: "Getting Started with Git & GitHub",
-    org: "IBM (Coursera)",
-    date: "Sep 2023",
-    img: "/certs/git.png",
-  },
-],
+    {
+      title: "Python for Data Science, AI & Development",
+      org: "IBM (Coursera)",
+      date: "Dec 2025",
+      img: "/certs/python.png",
+    },
+    {
+      title: "Introduction to Generative AI for Software Development",
+      org: "DeepLearning.AI (Coursera)",
+      date: "Jan 2026",
+      img: "/certs/genai.png",
+    },
+    {
+      title: "Developing Back-End Apps with Node.js & Express",
+      org: "IBM (Coursera)",
+      date: "Dec 2025",
+      img: "/certs/backend.png",
+    },
+    {
+      title: "Developing Front-End Apps with React",
+      org: "IBM (Coursera)",
+      date: "Nov 2025",
+      img: "/certs/frontend.png",
+    },
+    {
+      title: "Introduction to Cloud Computing",
+      org: "IBM (Coursera)",
+      date: "Aug 2023",
+      img: "/certs/cloud.png",
+    },
+    {
+      title: "Getting Started with Git & GitHub",
+      org: "IBM (Coursera)",
+      date: "Sep 2023",
+      img: "/certs/git.png",
+    },
+  ],
 
   other: [
     {
@@ -123,8 +123,6 @@ export default function CertificatesSection() {
           style={{
             marginTop: 28,
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: 20,
           }}
         >
           <AnimatePresence mode="wait">
@@ -153,9 +151,9 @@ export default function CertificatesSection() {
                   alt={c.title}
                   style={{
                     width: "100%",
-                    height: 160,
+                    height: "auto",
                     borderRadius: 10,
-                    objectFit: "cover",
+                    objectFit: "contain",
                     marginBottom: 12,
                   }}
                 />

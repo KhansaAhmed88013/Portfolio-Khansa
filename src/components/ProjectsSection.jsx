@@ -65,8 +65,6 @@ export default function ProjectsSection() {
           className="projects-grid"
           style={{
             display: "grid",
-            gap: 24,
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
           }}
         >
           {PROJECTS.map((p, idx) => (

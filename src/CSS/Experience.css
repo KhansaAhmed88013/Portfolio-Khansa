@@ -3,7 +3,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 55px 30px;
+  padding: 55px clamp(16px, 4vw, 30px);
   color: #f5f7fa;
 }
 
@@ -93,6 +93,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 14px;
 }
 
@@ -200,6 +201,8 @@
   }
 
   .experience-role {
+    flex: 1 1 180px;
+    min-width: 0;
     font-size: 1rem;
   }
 

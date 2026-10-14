@@ -19,6 +19,8 @@ import whatsappLogo from '../../public/whatsapp.png'
 import instagramLogo from '../../public/insta.png'
 
 export default function Home() {
+  const horizontalEntranceOffset = window.matchMedia("(max-width: 1200px)").matches ? 0 : 60;
+
   const professions = [
     'AI Engineering',
     'Computer Vision',
@@ -51,7 +53,7 @@ export default function Home() {
         <div className="home-top">
           {/* Left: Glowing Photo */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -horizontalEntranceOffset }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             className="photo-container"
@@ -79,7 +81,7 @@ export default function Home() {
 
           {/* Right: Info Section */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
+            initial={{ opacity: 0, x: horizontalEntranceOffset }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             className="home-info"

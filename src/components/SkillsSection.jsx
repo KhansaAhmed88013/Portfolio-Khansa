@@ -131,6 +131,17 @@ export default function SkillsSection() {
       const circles = Array.from(stage.querySelectorAll(".skill-circle"));
       const rect = stage.getBoundingClientRect();
       const placed = [];
+      const isSmallScreen = window.innerWidth <= 1024;
+
+      if (isSmallScreen) {
+        circles.forEach((circle) => {
+          const existing = floatAnimationsRef.current.get(circle);
+          if (existing) existing.cancel();
+          circle.style.removeProperty("left");
+          circle.style.removeProperty("top");
+        });
+        return;
+      }
 
       const isOverlapping = (x, y, size, gap) =>
         placed.some((p) => {
@@ -146,8 +157,7 @@ export default function SkillsSection() {
         }
 
         const size = circle.offsetWidth;
-        const isSmallScreen = window.innerWidth <= 640;
-        const gap = isSmallScreen ? 16 : 32;
+        const gap = 32;
         let x;
         let y;
         let tries = 0;
@@ -161,7 +171,7 @@ export default function SkillsSection() {
         circle.style.left = `${x}px`;
         circle.style.top = `${y}px`;
 
-        const travel = isSmallScreen ? 30 : 60;
+        const travel = 60;
         const dx = (Math.random() - 0.5) * travel;
         const dy = (Math.random() - 0.5) * travel;
         const floatAnimation = circle.animate(
