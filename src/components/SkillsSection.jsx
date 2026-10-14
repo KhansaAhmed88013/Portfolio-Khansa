@@ -123,72 +123,86 @@ const ROWS = [
 export default function SkillsSection() {
   const stageRef = useRef();
   const floatAnimationsRef = useRef(new WeakMap());
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
   useEffect(() => {
     const stage = stageRef.current;
     if (!stage) return;
-    const layoutCircles = () => {
-      const circles = Array.from(stage.querySelectorAll(".skill-circle"));
-      const rect = stage.getBoundingClientRect();
-      const placed = [];
-      const isSmallScreen = window.innerWidth <= 1024;
+    
+const layoutCircles = () => {
+  const circles = Array.from(stage.querySelectorAll(".skill-circle"));
+  const rect = stage.getBoundingClientRect();
+  const placed = [];
+  const isSmallScreen = window.innerWidth <= 1024;
 
-      if (isSmallScreen) {
-        circles.forEach((circle) => {
-          const existing = floatAnimationsRef.current.get(circle);
-          if (existing) existing.cancel();
-          circle.style.removeProperty("left");
-          circle.style.removeProperty("top");
-        });
-        return;
-      }
+  const isOverlapping = (x, y, size, gap) =>
+    placed.some((p) => {
+      const dx = p.x + p.size / 2 - (x + size / 2);
+      const dy = p.y + p.size / 2 - (y + size / 2);
 
-      const isOverlapping = (x, y, size, gap) =>
-        placed.some((p) => {
-          const dx = p.x - x;
-          const dy = p.y - y;
-          return Math.sqrt(dx * dx + dy * dy) < p.size / 2 + size / 2 + gap;
-        });
+      return (
+        Math.sqrt(dx * dx + dy * dy) <
+        p.size / 2 + size / 2 + gap
+      );
+    });
 
-      circles.forEach((circle) => {
-        const existing = floatAnimationsRef.current.get(circle);
-        if (existing) {
-          existing.cancel();
+  circles.forEach((circle, index) => {
+    const existing = floatAnimationsRef.current.get(circle);
+
+    if (existing) {
+      existing.cancel();
+      floatAnimationsRef.current.delete(circle);
+    }
+
+    const size = circle.offsetWidth;
+    const gap = isSmallScreen ? 8 : 32;
+
+    let x;
+    let y;
+    let tries = 0;
+
+    do {
+      x = Math.random() * Math.max(1, rect.width - size - 12);
+      y = Math.random() * Math.max(1, rect.height - size - 12);
+      tries++;
+    } while (
+      isOverlapping(x, y, size, gap) &&
+      tries < 150
+    );
+
+    placed.push({ x, y, size });
+
+    circle.style.left = `${x}px`;
+    circle.style.top = `${y}px`;
+
+    if (!prefersReducedMotion) {
+      // Gentle movement on mobile; retain the larger movement on desktop.
+      const travel = isSmallScreen ? 20 : 60;
+      const dx = (Math.random() - 0.5) * travel;
+      const dy = (Math.random() - 0.5) * travel;
+
+      const floatAnimation = circle.animate(
+        [
+          { transform: "translate(0px, 0px)" },
+          { transform: `translate(${dx}px, ${dy}px)` },
+        ],
+        {
+          duration: isSmallScreen
+            ? 5500 + Math.random() * 2000
+            : 5000 + Math.random() * 2000,
+          direction: "alternate",
+          iterations: Infinity,
+          easing: "ease-in-out",
         }
+      );
 
-        const size = circle.offsetWidth;
-        const gap = 32;
-        let x;
-        let y;
-        let tries = 0;
-        do {
-          x = Math.random() * Math.max(1, rect.width - size - 12);
-          y = Math.random() * Math.max(1, rect.height - size - 12);
-          tries += 1;
-        } while (isOverlapping(x, y, size, gap) && tries < 150);
+      floatAnimationsRef.current.set(circle, floatAnimation);
+    }
+  });
+};
 
-        placed.push({ x, y, size });
-        circle.style.left = `${x}px`;
-        circle.style.top = `${y}px`;
-
-        const travel = 60;
-        const dx = (Math.random() - 0.5) * travel;
-        const dy = (Math.random() - 0.5) * travel;
-        const floatAnimation = circle.animate(
-          [
-            { transform: "translate(0, 0)" },
-            { transform: `translate(${dx}px, ${dy}px)` },
-          ],
-          {
-            duration: 5000 + Math.random() * 2000,
-            direction: "alternate",
-            iterations: Infinity,
-            easing: "ease-in-out",
-          }
-        );
-        floatAnimationsRef.current.set(circle, floatAnimation);
-      });
-    };
 
     layoutCircles();
     window.addEventListener("resize", layoutCircles);
@@ -224,10 +238,10 @@ export default function SkillsSection() {
       <motion.div
         className="skills-stage relative mx-auto mb-20"
         ref={stageRef}
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+        transition={prefersReducedMotion ? { duration: 0 } : { duration: 1.2, ease: "easeOut" }}
         style={{
           width: "100%",
           background: "radial-gradient(circle at 50% 50%, #0a0a0a, #101010)",
@@ -238,10 +252,10 @@ export default function SkillsSection() {
           <motion.div
             key={s.name}
             className="skill-circle"
-            initial={{ opacity: 0, scale: 0 }}
+            initial={prefersReducedMotion ? false : { opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: i * 0.08, duration: 0.6, ease: "easeOut" }}
-            whileHover={{
+            transition={prefersReducedMotion ? { duration: 0 } : { delay: i * 0.08, duration: 0.6, ease: "easeOut" }}
+            whileHover={prefersReducedMotion ? undefined : {
               scale: 1.3,
               boxShadow: "0 0 35px 10px rgba(0,255,255,0.6)",
               background: "rgba(0,255,255,0.12)",
@@ -250,7 +264,7 @@ export default function SkillsSection() {
             <motion.img
               src={s.logo}
               alt={s.name}
-              whileHover={{
+              whileHover={prefersReducedMotion ? undefined : {
                 filter: "drop-shadow(0 0 12px rgba(0,255,255,0.9)) brightness(1.6)",
                 rotate: [0, 6, -6, 0],
                 transition: { duration: 0.5 },

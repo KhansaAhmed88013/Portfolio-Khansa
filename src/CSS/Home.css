@@ -71,12 +71,18 @@
   justify-content: center; /* ensures icons are centered */
 }
 
+.about-heading { font-size: 1.9rem; }
+.about-copy { font-size: 1rem; }
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .home-section {
     padding: 1.5rem 1rem 0.5rem;
     gap: 1rem;
   }
+
+  .about-heading { font-size: 1.65rem; }
+  .about-copy { font-size: 0.94rem; }
   
   .home-top {
     flex-direction: column;

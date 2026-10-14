@@ -24,8 +24,8 @@ export default function AboutSection() {
         }}
       >
         <h2
+          className="about-heading"
           style={{
-            fontSize: "1.9rem",
             marginBottom: "1rem",
             background:
               "linear-gradient(90deg, var(--accent), var(--accent-2))",
@@ -36,8 +36,8 @@ export default function AboutSection() {
           About Me
         </h2>
         <p
+          className="about-copy"
   style={{
-    fontSize: "1rem",
     color: "rgba(255,255,255,0.85)",
     marginBottom: "1rem",
   }}
@@ -46,8 +46,8 @@ export default function AboutSection() {
 </p>
 
 <p
+  className="about-copy"
   style={{
-    fontSize: "1rem",
     color: "rgba(255,255,255,0.8)",
   }}
 >

@@ -191,34 +191,58 @@
   }
 
   .skills-stage {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
-    align-items: center;
-    justify-items: center;
-    gap: 8px;
+    display: block;
     width: 100%;
-    height: auto;
-    min-height: 150px;
-    padding: 12px;
+    height: 430px;
+    min-height: 0;
+    padding: 0;
     border-radius: 12px;
   }
 
   .skill-circle {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
+    position: absolute !important;
     width: 54px;
     height: 54px;
-    transform: none !important;
+    animation: skill-bubble-drift 18s ease-in-out infinite alternate;
   }
 
   .skill-circle img {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
 
   .skill-circle span {
     font-size: 9px;
+  }
+
+  .skill-circle:nth-child(1) { left: 4%; top: 18px; }
+  .skill-circle:nth-child(2) { left: 29%; top: 58px; }
+  .skill-circle:nth-child(3) { left: 54%; top: 12px; }
+  .skill-circle:nth-child(4) { left: 78%; top: 52px; }
+  .skill-circle:nth-child(5) { left: 18%; top: 113px; }
+  .skill-circle:nth-child(6) { left: 43%; top: 132px; }
+  .skill-circle:nth-child(7) { left: 68%; top: 102px; }
+  .skill-circle:nth-child(8) { left: 3%; top: 207px; }
+  .skill-circle:nth-child(9) { left: 29%; top: 221px; }
+  .skill-circle:nth-child(10) { left: 54%; top: 184px; }
+  .skill-circle:nth-child(11) { left: 78%; top: 236px; }
+  .skill-circle:nth-child(12) { left: 18%; top: 301px; }
+  .skill-circle:nth-child(13) { left: 43%; top: 328px; }
+  .skill-circle:nth-child(14) { left: 68%; top: 291px; }
+  .skill-circle:nth-child(15) { left: 4%; top: 367px; }
+  .skill-circle:nth-child(16) { left: 78%; top: 359px; }
+
+  .skill-circle:nth-child(3n) {
+    animation-duration: 22s;
+  }
+
+  .skill-circle:nth-child(3n + 1) {
+    animation-duration: 20s;
+  }
+
+  @keyframes skill-bubble-drift {
+    from { translate: 0 0; }
+    to { translate: 2px -3px; }
   }
 
   .skills-table {
@@ -256,9 +280,7 @@
 
 @media (max-width: 480px) {
   .skills-stage {
-    grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
-    min-height: 150px;
-    padding: 10px;
+    height: 420px;
   }
 
   .skill-circle {
@@ -272,8 +294,25 @@
   }
 
   .skill-circle span {
-    font-size: 8px;
+    font-size: 8.5px;
   }
+
+  .skill-circle:nth-child(1) { left: 4%; top: 10px; }
+  .skill-circle:nth-child(2) { left: 29%; top: 44px; }
+  .skill-circle:nth-child(3) { left: 54%; top: 8px; }
+  .skill-circle:nth-child(4) { left: 78%; top: 40px; }
+  .skill-circle:nth-child(5) { left: 18%; top: 108px; }
+  .skill-circle:nth-child(6) { left: 43%; top: 128px; }
+  .skill-circle:nth-child(7) { left: 68%; top: 102px; }
+  .skill-circle:nth-child(8) { left: 3%; top: 194px; }
+  .skill-circle:nth-child(9) { left: 29%; top: 213px; }
+  .skill-circle:nth-child(10) { left: 54%; top: 190px; }
+  .skill-circle:nth-child(11) { left: 78%; top: 220px; }
+  .skill-circle:nth-child(12) { left: 18%; top: 286px; }
+  .skill-circle:nth-child(13) { left: 43%; top: 314px; }
+  .skill-circle:nth-child(14) { left: 68%; top: 284px; }
+  .skill-circle:nth-child(15) { left: 4%; top: 350px; }
+  .skill-circle:nth-child(16) { left: 78%; top: 355px; }
 
   .skills-row {
     grid-template-columns: 1fr !important;
@@ -298,5 +337,35 @@
   .skill-box li {
     font-size: 0.95rem;
     margin: 8px 0;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .skills-stage {
+    height: 390px;
+  }
+
+  .skill-circle:nth-child(1) { left: 2%; top: 16px; }
+  .skill-circle:nth-child(2) { left: 19%; top: 45px; }
+  .skill-circle:nth-child(3) { left: 36%; top: 10px; }
+  .skill-circle:nth-child(4) { left: 53%; top: 50px; }
+  .skill-circle:nth-child(5) { left: 70%; top: 15px; }
+  .skill-circle:nth-child(6) { left: 86%; top: 44px; }
+  .skill-circle:nth-child(7) { left: 10%; top: 124px; }
+  .skill-circle:nth-child(8) { left: 28%; top: 155px; }
+  .skill-circle:nth-child(9) { left: 46%; top: 116px; }
+  .skill-circle:nth-child(10) { left: 64%; top: 148px; }
+  .skill-circle:nth-child(11) { left: 82%; top: 121px; }
+  .skill-circle:nth-child(12) { left: 2%; top: 250px; }
+  .skill-circle:nth-child(13) { left: 21%; top: 279px; }
+  .skill-circle:nth-child(14) { left: 40%; top: 238px; }
+  .skill-circle:nth-child(15) { left: 59%; top: 270px; }
+  .skill-circle:nth-child(16) { left: 86%; top: 245px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-circle {
+    animation: none !important;
+    transition: none !important;
   }
 }
