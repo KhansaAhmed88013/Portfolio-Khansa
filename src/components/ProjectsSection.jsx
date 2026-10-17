@@ -1,31 +1,69 @@
+
 import React from "react";
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Youtube } from "lucide-react";
 
 const PROJECTS = [
   {
+  title: "SmartAI Factory – AI-Powered Machine Monitoring System",
+  desc: "AI-powered industrial machine monitoring system combining IoT sensor data, time-series forecasting, and an interactive dashboard to support predictive maintenance. Built with ESP32, React, Node.js, MongoDB, Python, FastAPI, and PyTorch.",
+  ss: "/smart-ai-factory.png",
+  tech: [
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Python",
+    "FastAPI",
+    "PyTorch",
+    "ESP32",
+    "IoT",
+  ],
+  live: "https://smart-ai-frontend.vercel.app/login",
+  code: "https://github.com/KhansaAhmed88013/SmartAI-Backend",
+  youtube: "https://youtu.be/aYHcdaFQDWI",
+},
+  {
     title: "SpecifyAI – AI Requirement Analysis Platform",
-    desc: "AI-powered web application that converts project ideas into structured technical specifications. Includes authentication, project management, and automated requirement analysis with cloud deployment.",
+    desc: "AI-powered web application that transforms project ideas into structured technical specifications. Features authentication, project management, and automated requirement analysis.",
     ss: "/specifyai.png",
     tech: ["React", "Node.js", "Express", "MongoDB", "Nginx", "PM2", "CI/CD"],
-    live: "http://specifyai.159.89.165.42.nip.io",
+    youtube: "https://youtu.be/YB5HyQ9pkOQ?si=BCoNX1T2GzadE7AY", // Add SpecifyAI YouTube video URL
     code: "https://github.com/KhansaAhmed88013/SpecifyAI-project",
   },
   {
     title: "AI Merge Risk Advisor",
-    desc: "AI-based system that analyzes code changes and predicts their impact before merging. It detects file changes, builds dependency graphs, and provides risk scores with merge recommendations.",
+    desc: "AI-based system that analyzes code changes and predicts their potential impact before merging. Builds dependency graphs and provides risk scores with merge recommendations.",
     ss: "/merge.png",
     tech: ["Python", "FastAPI", "React", "NetworkX", "AI"],
-    live: "#",
+    youtube: "https://youtu.be/-PdpqvVubkQ?si=PpuHvgNdHmJXH9TB", // Add AI Merge Risk Advisor YouTube video URL
     code: "https://gitlab.com/gitlab-ai-hackathon/participants/35349418",
   },
   {
     title: "SmartMart – E-commerce Web App",
-    desc: "Full-stack e-commerce application with product management, authentication, and dashboard features. Built with React frontend and Node.js backend, deployed using Vercel and Render.",
+    desc: "Full-stack e-commerce application with product management, authentication, and dashboard features. Built with React frontend and Node.js backend.",
     ss: "/smartmart.png",
     tech: ["React", "Redux", "Node.js", "Express", "MySQL", "Sequelize"],
     live: "https://smart-mart-client.vercel.app",
     code: "https://github.com/KhansaAhmed88013/SmartMart-client",
+  },
+  {
+    title: "Store Pulse – Retail Analytics & ETL Platform",
+    desc: "End-to-end retail analytics platform that transforms raw Walmart sales data into clean, validated datasets. Features an automated ETL pipeline, PostgreSQL integration through Supabase, SQL-based business analytics, an interactive Streamlit dashboard, and an AI-assisted insights experience.",
+    ss: "/store-pulse.png", // Add this image to your public folder
+    tech: [
+      "Python",
+      "Pandas",
+      "ETL",
+      "PostgreSQL",
+      "Supabase",
+      "SQLAlchemy",
+      "Streamlit",
+      "OpenAI API",
+    ],
+    youtube: "https://youtu.be/VW7KecWJxyg?si=WCzV62zpvjz3rh_o", // Add Store Pulse YouTube video URL
+    code: "https://github.com/OpenAI-Hackathon-Team/store-pulse",
   },
 ];
 
@@ -57,16 +95,13 @@ export default function ProjectsSection() {
         >
           Projects
         </motion.h2>
+
         <p className="text-gray-400 mb-10">
-          A collection of my major works, blending research and AI innovation.
+          A collection of my major works, blending research,
+          AI innovation, and data engineering.
         </p>
 
-        <div
-          className="projects-grid"
-          style={{
-            display: "grid",
-          }}
-        >
+        <div className="projects-grid" style={{ display: "grid" }}>
           {PROJECTS.map((p, idx) => (
             <motion.div
               key={p.title}
@@ -84,6 +119,8 @@ export default function ProjectsSection() {
                 padding: 16,
                 overflow: "hidden",
                 boxShadow: "0 0 20px rgba(0,255,255,0.08)",
+                display: "flex",
+                flexDirection: "column",
               }}
             >
               <motion.div
@@ -94,19 +131,34 @@ export default function ProjectsSection() {
                 <img
                   src={p.ss}
                   alt={p.title}
+                  loading="lazy"
                   style={{
                     width: "100%",
-                    height: "200px",
+                    height: 200,
                     objectFit: "cover",
                     borderRadius: 12,
                   }}
                 />
               </motion.div>
 
-              <div style={{ marginTop: 12 }}>
-                <h3 style={{ fontSize: 18, color: "#0ea5e9", marginBottom: 6 }}>
+              <div
+                style={{
+                  marginTop: 12,
+                  display: "flex",
+                  flexDirection: "column",
+                  flex: 1,
+                }}
+              >
+                <h3
+                  style={{
+                    fontSize: 18,
+                    color: "#0ea5e9",
+                    marginBottom: 6,
+                  }}
+                >
                   {p.title}
                 </h3>
+
                 <p
                   style={{
                     fontSize: 14,
@@ -146,16 +198,19 @@ export default function ProjectsSection() {
                 <div
                   style={{
                     display: "flex",
+                    flexWrap: "wrap",
                     justifyContent: "flex-end",
+                    alignItems: "center",
                     gap: 10,
+                    marginTop: "auto",
                   }}
                 >
                   <motion.a
                     href={p.code}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="btn"
-                    whileHover={{ scale: 1.08 }}
+                    whileHover={{ scale: 1.05 }}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -171,26 +226,54 @@ export default function ProjectsSection() {
                   >
                     <Github size={14} /> Code
                   </motion.a>
-                  <motion.a
-                    href={p.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn"
-                    whileHover={{ scale: 1.08 }}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 5,
-                      background: "linear-gradient(90deg, #06b6d4, #0891b2)",
-                      color: "#fff",
-                      padding: "6px 12px",
-                      borderRadius: 8,
-                      fontSize: 13,
-                      textDecoration: "none",
-                    }}
-                  >
-                    <ExternalLink size={14} /> Live
-                  </motion.a>
+
+                  {p.live && (
+                    <motion.a
+                      href={p.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn"
+                      whileHover={{ scale: 1.05, filter: "brightness(0.9)" }}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 5,
+                        background:
+                          "linear-gradient(90deg, #06b6d4, #0891b2)",
+                        color: "#fff",
+                        padding: "6px 12px",
+                        borderRadius: 8,
+                        fontSize: 13,
+                        textDecoration: "none",
+                      }}
+                    >
+                      <ExternalLink size={14} /> Live
+                    </motion.a>
+                  )}
+
+                  {p.youtube && (
+                    <motion.a
+                      href={p.youtube}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn"
+                      whileHover={{ scale: 1.05 }}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 5,
+                        background:
+                          "linear-gradient(90deg, #f87171, #ef4444)",
+                        color: "#fff",
+                        padding: "6px 12px",
+                        borderRadius: 8,
+                        fontSize: 13,
+                        textDecoration: "none",
+                      }}
+                    >
+                      <Youtube size={14} /> Watch Demo
+                    </motion.a>
+                  )}
                 </div>
               </div>
             </motion.div>
