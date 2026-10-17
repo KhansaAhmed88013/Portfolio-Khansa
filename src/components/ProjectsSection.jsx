@@ -7,7 +7,7 @@ const PROJECTS = [
   {
   title: "SmartAI Factory – AI-Powered Machine Monitoring System",
   desc: "AI-powered industrial machine monitoring system combining IoT sensor data, time-series forecasting, and an interactive dashboard to support predictive maintenance. Built with ESP32, React, Node.js, MongoDB, Python, FastAPI, and PyTorch.",
-  ss: "/smart-ai-factory.png",
+  ss: "/smart-ai-factory.jpg",
   tech: [
     "React",
     "TypeScript",
@@ -27,7 +27,7 @@ const PROJECTS = [
   {
     title: "SpecifyAI – AI Requirement Analysis Platform",
     desc: "AI-powered web application that transforms project ideas into structured technical specifications. Features authentication, project management, and automated requirement analysis.",
-    ss: "/specifyai.png",
+    ss: "/specifyai.jpg",
     tech: ["React", "Node.js", "Express", "MongoDB", "Nginx", "PM2", "CI/CD"],
     youtube: "https://youtu.be/YB5HyQ9pkOQ?si=BCoNX1T2GzadE7AY", // Add SpecifyAI YouTube video URL
     code: "https://github.com/KhansaAhmed88013/SpecifyAI-project",
@@ -43,7 +43,7 @@ const PROJECTS = [
   {
     title: "SmartMart – E-commerce Web App",
     desc: "Full-stack e-commerce application with product management, authentication, and dashboard features. Built with React frontend and Node.js backend.",
-    ss: "/smartmart.png",
+    ss: "/smartmart.jpg",
     tech: ["React", "Redux", "Node.js", "Express", "MySQL", "Sequelize"],
     live: "https://smart-mart-client.vercel.app",
     code: "https://github.com/KhansaAhmed88013/SmartMart-client",
