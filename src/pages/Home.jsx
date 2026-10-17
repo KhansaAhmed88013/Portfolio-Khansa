@@ -11,7 +11,7 @@ import ExperienceSection from '../components/ExperienceSection'
 
 
 // 🖼️ Import Assets
-import photo from '../../public/my-pic.png'
+import photo from '../../public/my-pic.jpg'
 import githubLogo from '../../public/github.png'
 import linkedinLogo from '../../public/linkedin.png'
 import gmailLogo from '../../public/gmail.png'
