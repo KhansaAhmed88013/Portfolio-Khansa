@@ -41,14 +41,6 @@ const PROJECTS = [
     code: "https://gitlab.com/gitlab-ai-hackathon/participants/35349418",
   },
   {
-    title: "SmartMart – E-commerce Web App",
-    desc: "Full-stack e-commerce application with product management, authentication, and dashboard features. Built with React frontend and Node.js backend.",
-    ss: "/smartmart.jpg",
-    tech: ["React", "Redux", "Node.js", "Express", "MySQL", "Sequelize"],
-    live: "https://smart-mart-client.vercel.app",
-    code: "https://github.com/KhansaAhmed88013/SmartMart-client",
-  },
-  {
     title: "Store Pulse – Retail Analytics & ETL Platform",
     desc: "End-to-end retail analytics platform that transforms raw Walmart sales data into clean, validated datasets. Features an automated ETL pipeline, PostgreSQL integration through Supabase, SQL-based business analytics, an interactive Streamlit dashboard, and an AI-assisted insights experience.",
     ss: "/store-pulse.png", // Add this image to your public folder
@@ -65,6 +57,14 @@ const PROJECTS = [
     youtube: "https://youtu.be/VW7KecWJxyg?si=WCzV62zpvjz3rh_o", // Add Store Pulse YouTube video URL
     code: "https://github.com/OpenAI-Hackathon-Team/store-pulse",
   },
+  {
+    title: "SmartMart – E-commerce Web App",
+    desc: "Full-stack e-commerce application with product management, authentication, and dashboard features. Built with React frontend and Node.js backend.",
+    ss: "/smartmart.jpg",
+    tech: ["React", "Redux", "Node.js", "Express", "MySQL", "Sequelize"],
+    live: "https://smart-mart-client.vercel.app",
+    code: "https://github.com/KhansaAhmed88013/SmartMart-client",
+  }
 ];
 
 export default function ProjectsSection() {
