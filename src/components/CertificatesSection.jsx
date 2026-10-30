@@ -4,6 +4,19 @@ import { motion, AnimatePresence } from "framer-motion";
 const CERTS = {
   tech: [
     {
+      title: "Deep Learning for Computer Vision",
+      org: "University of Colorado Boulder",
+      date: "Oct 2026",
+      img: "/certs/deepCV.png",
+    },
+    {
+      title: "Neural Networks and Deep Learning",
+      org: "DeepLearning.AI",
+      date: " Sept 2026",
+      img: "/certs/NN&CV.png",
+    }
+    ,
+    {
       title: "Python for Data Science, AI & Development",
       org: "IBM (Coursera)",
       date: "Dec 2025",
