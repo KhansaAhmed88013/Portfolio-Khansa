@@ -24,6 +24,24 @@ const PROJECTS = [
   code: "https://github.com/KhansaAhmed88013/SmartAI-Backend",
   youtube: "https://youtu.be/aYHcdaFQDWI",
 },
+
+{
+  title: "SIFT vs ORB – Feature Matching & Homography Estimation",
+  desc: "A computer vision project comparing SIFT and ORB feature detection and matching across different image viewpoints. Implements descriptor matching, Lowe's ratio test, RANSAC-based homography estimation, independent test-set geometric validation, perspective warping, and image alignment visualization.",
+  ss: "/sift-orb.png",
+  tech: [
+    "Python",
+    "OpenCV",
+    "SIFT",
+    "ORB",
+    "NumPy",
+    "RANSAC",
+    "Homography",
+    "Computer Vision"
+  ],
+  code: "https://github.com/KhansaAhmed88013/SIFT-ORB-Feature-Matching"
+},
+,
   {
     title: "SpecifyAI – AI Requirement Analysis Platform",
     desc: "AI-powered web application that transforms project ideas into structured technical specifications. Features authentication, project management, and automated requirement analysis.",
